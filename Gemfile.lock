@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     peak (0.0.0)
+      activesupport (~> 6.0.0, >= 6.0.0)
       addressable (~> 2.7)
       dry-core (~> 0.4.9)
       dry-equalizer (~> 0.2.2)

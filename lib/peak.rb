@@ -1,3 +1,5 @@
+require 'active_support'
+
 module Peak
   extend ActiveSupport::Autoload
 
@@ -10,4 +12,5 @@ module Peak
   autoload :Transform
   autoload :Transformer
   autoload :Types
+  autoload :VERSION
 end

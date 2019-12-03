@@ -1,20 +1,21 @@
-lib = File.expand_path("lib", __dir__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "peak/version"
+require 'peak/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "peak"
+  spec.name          = 'peak'
   spec.version       = Peak::VERSION
-  spec.summary       = "Peak"
-  spec.authors       = ["Steve Jabour"]
-  spec.email         = ["steve@jabour.me"]
-  spec.files         = Dir["lib/**/*", "Rakefile"]
-  spec.require_paths = ["lib"]
+  spec.summary       = 'Peak'
+  spec.authors       = ['Steve Jabour']
+  spec.email         = ['steve@jabour.me']
+  spec.files         = Dir['lib/**/*', 'Rakefile']
+  spec.require_paths = ['lib']
 
-  spec.add_development_dependency "bundler", "~> 2.0"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "minitest", "~> 5.0"
+  spec.add_development_dependency 'bundler', '~> 2.0'
+  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'minitest', '~> 5.0'
 
+  spec.add_runtime_dependency 'activesupport', '~> 6.0.0', '>= 6.0.0'
   spec.add_runtime_dependency 'addressable', '~> 2.7'
   spec.add_runtime_dependency 'dry-core', '~> 0.4.9'
   spec.add_runtime_dependency 'dry-equalizer', '~> 0.2.2'
