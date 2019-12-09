@@ -27,6 +27,20 @@ module Peak
           input
         end
       end
+
+      def uri(input)
+        if input.instance_of?(::String) || input.instance_of?(::URI::Generic)
+          value = input.instance_of?(::String) ? ::URI.parse(input) : input
+
+          ::Hash[{
+            host: value.host,
+            port: value.port,
+            protocol: value.scheme,
+          }]
+        else
+          input
+        end
+      end
     end
   end
 end
