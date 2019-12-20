@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    peak (0.2.0.pre.alpha.1)
+    peak (0.2.0)
       activesupport (~> 6.0.0, >= 6.0.0)
       addressable (~> 2.7)
       dry-configurable (~> 0.8.0)
