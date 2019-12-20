@@ -5,6 +5,8 @@ module Peak
     autoload :Base
     autoload :Dasherizer
     autoload :Deserializable
+    autoload :Openid
     autoload :Serializable
+    autoload :Symbolizer
   end
 end

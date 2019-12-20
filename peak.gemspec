@@ -17,6 +17,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'activesupport', '~> 6.0.0', '>= 6.0.0'
   spec.add_runtime_dependency 'addressable', '~> 2.7'
+  spec.add_runtime_dependency 'dry-configurable', '~> 0.8.0'
   spec.add_runtime_dependency 'dry-core', '~> 0.4.9'
   spec.add_runtime_dependency 'dry-equalizer', '~> 0.2.2'
   spec.add_runtime_dependency 'dry-initializer', '~> 3.0', '>= 3.0.1'
@@ -25,6 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'httparty', '~> 0.17.1'
   spec.add_runtime_dependency 'jsonapi-deserializable', '~> 0.2.0'
   spec.add_runtime_dependency 'jsonapi-serializable', '~> 0.3.1'
+  spec.add_runtime_dependency 'jwt', '~> 2.2', '>= 2.2.1'
   spec.add_runtime_dependency 'railties', '~> 6.0.0', '>= 6.0.0'
   spec.add_runtime_dependency 'transproc', '~> 1.1'
 end

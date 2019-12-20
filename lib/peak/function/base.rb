@@ -3,13 +3,10 @@ require 'httparty'
 module Peak
   module Function
     class Base < Model
-      defines :logger, :meta, :openfaas_deserializable, :openfaas_func, :openfaas_headers,
+      defines :meta, :openfaas_deserializable, :openfaas_func, :openfaas_headers,
               :openfaas_serializable, :openfaas_url
 
-      logger Undefined
-
       meta EMPTY_OPTS
-
       openfaas_deserializable Deserializable
       openfaas_func Undefined
       openfaas_headers EMPTY_OPTS
@@ -17,6 +14,14 @@ module Peak
       openfaas_url Undefined
 
       class << self
+        def config
+          ::Peak.config
+        end
+
+        def logger
+          config.logger
+        end
+
         def normalize_body(operations = EMPTY_ARRAY)
           @classes ||= Hash.new.yield_self { |value| value.default = openfaas_serializable; value; }
           @dasherizer ||= Dasherizer.new

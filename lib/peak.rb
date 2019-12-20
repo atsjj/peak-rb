@@ -3,6 +3,8 @@ require 'active_support'
 module Peak
   extend ActiveSupport::Autoload
 
+  autoload :Authentication
+  autoload :Configuration
   autoload :Function
   autoload :Initializer
   autoload :Model
@@ -13,4 +15,10 @@ module Peak
   autoload :Transformer
   autoload :Types
   autoload :VERSION
+
+  class << self
+    def config
+      Configuration.config
+    end
+  end
 end
