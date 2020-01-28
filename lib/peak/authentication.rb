@@ -5,5 +5,6 @@ module Peak
     autoload :Base
     autoload :Current
     autoload :Protect
+    autoload :MaybeToken
   end
 end

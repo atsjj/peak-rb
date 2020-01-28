@@ -7,6 +7,7 @@ module Peak
     autoload :Deserializable
     autoload :Openid
     autoload :Serializable
+    autoload :Simple
     autoload :Symbolizer
   end
 end
