@@ -7,6 +7,7 @@ module Peak
   autoload :Configuration
   autoload :Function
   autoload :Initializer
+  autoload :JsonWebToken
   autoload :Model
   autoload :Precompile
   autoload :Records
