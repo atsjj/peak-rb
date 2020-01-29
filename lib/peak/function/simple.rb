@@ -5,7 +5,10 @@ module Peak
     class Simple < Base
       class << self
         def authenticate(token, options)
-          JWT.decode(token)
+          secret = options.fetch(:secret, nil)
+          algorithm = options.fetch(:algorithm, 'HS256')
+
+          return JWT.decode(token, secret, true, { algorithm: algorithm })
         rescue JWT::JWKError => exception
           logger.warn("JWT::JWKError #{exception}")
           logger.error(exception.backtrace.join("\n"))
@@ -15,7 +18,7 @@ module Peak
           logger.error(exception.backtrace.join("\n"))
           false
         rescue Exception => exception
-          logger.warn("Peak::Function::Openid #{exception}")
+          logger.warn("Peak::Function::Simple #{exception}")
           logger.error(exception.backtrace.join("\n"))
           false
         end
