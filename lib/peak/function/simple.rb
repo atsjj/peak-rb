@@ -4,11 +4,16 @@ module Peak
   module Function
     class Simple < Base
       class << self
-        def authenticate(token, options)
-          secret = options.fetch(:secret, nil)
-          algorithm = options.fetch(:algorithm, 'HS256')
+        def algorithms
+          config.authentication.jwt.algorithms
+        end
 
-          return JWT.decode(token, secret, true, { algorithm: algorithm })
+        def secret_key
+          config.authentication.jwt.secret_key
+        end
+
+        def authenticate(token, options)
+          return JWT.decode(token, secret_key, true, { algorithm: algorithms })
         rescue JWT::JWKError => exception
           logger.warn("JWT::JWKError #{exception}")
           logger.error(exception.backtrace.join("\n"))

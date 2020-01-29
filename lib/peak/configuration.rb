@@ -8,6 +8,7 @@ module Peak
 
     setting(:authentication) do
       setting(:jwt) do
+        setting(:secret_key)
         setting(:algorithms, ['RS256'])
       end
       setting(:openid) do
