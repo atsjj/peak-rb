@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest', '~> 5.0'
 
   spec.add_runtime_dependency 'activesupport', '~> 5.0.0', '>= 5.0.0'
-  spec.add_runtime_dependency 'addressable', '~> 2.7.0', '>= 2.7.0'
+  spec.add_runtime_dependency 'addressable', '~> 2.3.0', '>= 2.3.0'
   spec.add_runtime_dependency 'dry-configurable', '~> 0.8.0', '>= 0.8.0'
   spec.add_runtime_dependency 'dry-core', '~> 0.4.0', '>= 0.4.0'
   spec.add_runtime_dependency 'dry-equalizer', '~> 0.3.0', '>= 0.3.0'
