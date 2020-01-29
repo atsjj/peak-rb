@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'minitest', '~> 5.0'
 
-  spec.add_runtime_dependency 'activesupport', '~> 5.0.0', '>= 5.0.0'
+  spec.add_runtime_dependency 'activesupport', '~> 5.2.0', '>= 5.2.0'
   spec.add_runtime_dependency 'addressable', '~> 2.3.0', '>= 2.3.0'
   spec.add_runtime_dependency 'dry-configurable', '~> 0.8.0', '>= 0.8.0'
   spec.add_runtime_dependency 'dry-core', '~> 0.4.0', '>= 0.4.0'
@@ -28,6 +28,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'jsonapi-serializable', '~> 0.3.0', '>= 0.3.0'
   spec.add_runtime_dependency 'jwt', '~> 2.2.0', '>= 2.2.0'
   spec.add_runtime_dependency 'oj', '~> 3.10.0', '>= 3.10.0'
-  spec.add_runtime_dependency 'railties', '~> 5.0.0', '>= 5.0.0'
+  spec.add_runtime_dependency 'railties', '~> 5.2.0', '>= 5.2.0'
   spec.add_runtime_dependency 'transproc', '~> 1.1.0', '>= 1.1.0'
 end
