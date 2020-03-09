@@ -1,9 +1,9 @@
-require 'transproc/registry'
+require 'dry/transformer/registry'
 
 module Peak
   module Transform
     module Inflections
-      extend Transproc::Registry
+      extend Dry::Transformer::Registry
 
       class << self
         def dasherize(value)

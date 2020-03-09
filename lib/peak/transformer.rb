@@ -1,6 +1,6 @@
-require 'transproc/transformer'
+require 'dry/transformer'
 
 module Peak
-  class Transformer < Transproc::Transformer[Peak::Transform::Base]
+  class Transformer < Dry::Transformer[Peak::Transform::Base]
   end
 end

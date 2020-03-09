@@ -1,9 +1,9 @@
-require 'transproc/registry'
+require 'dry/transformer/registry'
 
 module Peak
   module Transform
     module Coercions
-      extend Transproc::Registry
+      extend Dry::Transformer::Registry
 
       class << self
         def to_lowercase(value)

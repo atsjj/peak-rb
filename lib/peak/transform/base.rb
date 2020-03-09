@@ -1,25 +1,24 @@
 require 'dry/core/class_attributes'
 require 'dry/core/constants'
-require 'transproc'
-require 'transproc/array'
-require 'transproc/coercions'
-require 'transproc/conditional'
-require 'transproc/hash'
-require 'transproc/recursion'
-require 'transproc/registry'
+require 'dry/transformer/array'
+require 'dry/transformer/coercions'
+require 'dry/transformer/conditional'
+require 'dry/transformer/hash'
+require 'dry/transformer/recursion'
+require 'dry/transformer/registry'
 
 module Peak
   module Transform
     module Base
       extend Dry::Core::ClassAttributes
-      extend Transproc::Registry
+      extend Dry::Transformer::Registry
       include Dry::Core::Constants
 
-      import Transproc::ArrayTransformations
-      import Transproc::Coercions
-      import Transproc::Conditional
-      import Transproc::HashTransformations
-      import Transproc::Recursion
+      import Dry::Transformer::ArrayTransformations
+      import Dry::Transformer::Coercions
+      import Dry::Transformer::Conditional
+      import Dry::Transformer::HashTransformations
+      import Dry::Transformer::Recursion
 
       import Coercions
       import Inflections
