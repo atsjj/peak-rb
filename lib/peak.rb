@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'active_support'
 
 module Peak
@@ -5,16 +7,11 @@ module Peak
 
   autoload :Authentication
   autoload :Configuration
-  autoload :Function
+  autoload :Enum
+  autoload :Graph
+  autoload :Hash
   autoload :Initializer
   autoload :JsonWebToken
-  autoload :Model
-  autoload :Precompile
-  autoload :Records
-  autoload :Struct
-  autoload :Transform
-  autoload :Transformer
-  autoload :Types
   autoload :VERSION
 
   class << self
