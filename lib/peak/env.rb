@@ -8,11 +8,9 @@ module Peak
     autoload :Resolver
 
     class << self
-      def instance
-        Peak.config.env.instance
-      end
+      attr_accessor :instance
 
-      delegate :required, :optional, :with, to: :instance, allow_nil: true
+      delegate :required, :optional, :with, to: :@instance, allow_nil: true
     end
   end
 end

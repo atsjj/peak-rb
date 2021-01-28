@@ -19,7 +19,7 @@ module Peak
       #
       # @api public
       def environment
-        Peak.config.authentication.env.environment
+        Peak.config.env.environment
       end
 
       # @!setting [r] prefix A prefix that can help resolve environment
@@ -35,7 +35,7 @@ module Peak
       #
       # @api public
       def prefix
-        Peak.config.authentication.env.prefix
+        Peak.config.env.prefix
       end
 
       # @!setting [r] namespace A namespace that can help resolve
@@ -49,7 +49,7 @@ module Peak
       #
       # @api public
       def namespace
-        Peak.config.authentication.env.namespace
+        Peak.config.env.namespace
       end
 
       # @!setting [r] target A string for a given application's target
@@ -67,7 +67,7 @@ module Peak
       #
       # @api public
       def target
-        Peak.config.authentication.env.target
+        Peak.config.env.target
       end
 
       # Returns prefixes split on the namespace pattern.

@@ -17,7 +17,6 @@ module Peak
     end
 
     setting(:env) do
-      setting(:instance, Peak::Env::Resolver.new)
       setting(:environment, ENV)
       setting(:prefix, EMPTY_STRING)
       setting(:namespace, EMPTY_STRING)
