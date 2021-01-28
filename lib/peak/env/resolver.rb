@@ -210,7 +210,7 @@ module Peak
       #
       # @api public
       def with(target = DEFAULT_TARGET)
-        yield(super(target: target))
+        yield(self.class.new(options.merge(target: target)))
       end
 
       # Requires that a given environment variable can be fetched and

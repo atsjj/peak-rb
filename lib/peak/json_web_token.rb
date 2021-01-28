@@ -18,7 +18,7 @@ module Peak
       # @param algorithm [String] the hashing algorithm to use with `ruby-jwt`
       # @param secret [String] the secret key used in generating the hash
       # @return [String] JSON Web Token
-      def encode(payload: EMPTY_HASH, expires_at: expires_at_time, issued_at: issued_at_time, not_before: not_before_time, algorithm: 'HS256', secret: secret_key)
+      def encode(payload: EMPTY_HASH, expires_at: expires_at_time, issued_at: issued_at_time, not_before: not_before_time, algorithm: algorithm, secret: secret_key)
         options = payload.merge({ exp: expires_at, iat: issued_at, nbf: not_before }).delete_if { |k, v| v.nil? }
 
         JWT.encode(options, secret, algorithm)
@@ -31,11 +31,15 @@ module Peak
       # @param algorithm [String] the hashing algorithm to use with `ruby-jwt`
       # @param secret [String] the secret key used in generating the hash
       # @return [Hash] the JSON Web Token payload
-      def decode(token = EMPTY_STRING, algorithm: 'HS256', secret: secret_key)
+      def decode(token = EMPTY_STRING, algorithm: algorithm, secret: secret_key)
         JWT.decode(token, secret, true, { algorithm: algorithm })
       end
 
       protected
+
+      def algorithm
+        ::Peak.config.authentication.jwt.algorithm
+      end
 
       def secret_key
         ::Peak.config.authentication.jwt.secret_key

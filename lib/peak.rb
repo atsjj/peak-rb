@@ -9,6 +9,7 @@ module Peak
   autoload :Configuration
   autoload :Enum
   autoload :Env
+  autoload :Function
   autoload :Graph
   autoload :Hash
   autoload :Initializer

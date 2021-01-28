@@ -11,8 +11,8 @@ module Peak
 
     setting(:authentication) do
       setting(:jwt) do
-        setting(:secret_key)
-        setting(:algorithms, ['RS256'])
+        setting(:secret_key, EMPTY_STRING)
+        setting(:algorithm, 'RS256')
       end
     end
 
