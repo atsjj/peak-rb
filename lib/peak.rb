@@ -8,6 +8,7 @@ module Peak
   autoload :Authentication
   autoload :Configuration
   autoload :Enum
+  autoload :Env
   autoload :Graph
   autoload :Hash
   autoload :Initializer
@@ -20,3 +21,5 @@ module Peak
     end
   end
 end
+
+require 'peak/railtie' if defined?(Rails)

@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'bundler', '~> 2.0'
-  spec.add_development_dependency 'rake', '~> 12.0', '>= 12.3.3'
+  spec.add_development_dependency 'rake', '~> 12.0'
   spec.add_development_dependency 'minitest', '~> 5.0'
 
   spec.add_runtime_dependency 'activesupport', '>= 6.0.0'
@@ -22,4 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'dry-core', '>= 0.4.0'
   spec.add_runtime_dependency 'dry-initializer', '>= 3.0.0'
   spec.add_runtime_dependency 'jwt', '>= 2.2.0'
+  spec.add_runtime_dependency 'railties', '>= 6.0.0'
 end
