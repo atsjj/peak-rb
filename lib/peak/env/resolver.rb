@@ -8,6 +8,7 @@ module Peak
   module Env
     class Resolver
       extend Forwardable
+      extend Peak::Initializer
       include Dry::Core::Constants
       include Peak::Env::Constants
 
@@ -18,9 +19,7 @@ module Peak
       # @return [Hash] environment hash that defaults to ENV.
       #
       # @api public
-      def environment
-        Peak.config.env.environment
-      end
+      option :environment, default: -> { Peak.config.env.environment }
 
       # @!setting [r] prefix A prefix that can help resolve environment
       #               variables and when set will further augment the
@@ -34,9 +33,7 @@ module Peak
       #                  in the given `environment` hash.
       #
       # @api public
-      def prefix
-        Peak.config.env.prefix
-      end
+      option :prefix, default: -> { Peak.config.env.prefix }
 
       # @!setting [r] namespace A namespace that can help resolve
       #               environment variables.
@@ -48,9 +45,7 @@ module Peak
       #                  `environment` hash.
       #
       # @api public
-      def namespace
-        Peak.config.env.namespace
-      end
+      option :namespace, default: -> { Peak.config.env.namespace }
 
       # @!setting [r] target A string for a given application's target
       #               runtime, typically "development", "production" or
@@ -66,9 +61,7 @@ module Peak
       #                  the given `environment` hash.
       #
       # @api public
-      def target
-        Peak.config.env.target
-      end
+      option :target, default: -> { Peak.config.env.target }
 
       # Returns prefixes split on the namespace pattern.
       #
@@ -217,10 +210,7 @@ module Peak
       #
       # @api public
       def with(target = DEFAULT_TARGET)
-        klass = Class.new(self.class)
-        klass.configure { |c| c.target = target }
-
-        yield(klass.new)
+        yield(super(target: target))
       end
 
       # Requires that a given environment variable can be fetched and
